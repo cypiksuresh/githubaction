@@ -1,0 +1,9 @@
+
+In this template:
+
+- For Google Cloud Platform, there are two actions provided: one for deploying to Cloud Run and another for running tests with Cloud Build.
+- For Amazon Web Services, there are also two actions: one for deploying to Elastic Beanstalk and another for managing AWS resources with CloudFormation.
+- Each action includes a description, usage example, and any necessary secrets or configurations.
+- Contributions and licensing information are also included.
+
+Make sure to replace placeholders such as `GCP_SA_KEY`, `GCP_PROJECT_ID`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY` with actual values, and adjust configurations according to your specific use case. Additionally, ensure that you have the necessary permissions set up in your cloud provider accounts for the GitHub Actions to interact with your cloud resources.
