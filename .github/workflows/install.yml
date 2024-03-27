@@ -1,14 +1,21 @@
-name: Install Nginx on Server
+name: Install Nginx on Servers in multiple
 
 on:
   push:
     branches:
       - master
 
-
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        server_ip:
+          - 34.70.189.180
+          - 35.239.24.135
+          - 34.30.18.61
+          # Add more server IP addresses as needed
 
     steps:
       - name: Checkout code
@@ -19,6 +26,6 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Install Nginx
+      - name: Install Nginx on Server
         run: |
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no suresh@34.72.211.194 'sudo apt-get update && sudo apt-get install -y docker.io'
+          ssh -i ~/.ssh/id_rsa  -o StrictHostKeyChecking=no suresh@${{ matrix.server_ip }} 'sudo apt-get update && sudo apt-get install -y nginx'
