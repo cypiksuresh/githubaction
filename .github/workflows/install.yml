@@ -12,9 +12,7 @@ jobs:
     strategy:
       matrix:
         server_ip:
-          - 34.70.189.180
-          - 35.239.24.135
-          - 34.30.18.61
+          - 34.29.43.4
           # Add more server IP addresses as needed
 
     steps:
@@ -28,4 +26,4 @@ jobs:
 
       - name: Install Nginx on Server
         run: |
-          ssh -i ~/.ssh/id_rsa  -o StrictHostKeyChecking=no suresh@${{ matrix.server_ip }} 'sudo apt-get update && sudo apt-get install -y nginx'
+          ssh -i ~/.ssh/id_rsa  -o StrictHostKeyChecking=no suresh@${{ matrix.server_ip }} 'sudo apt-get update && sudo apt-get install -y phpmyadmin'
